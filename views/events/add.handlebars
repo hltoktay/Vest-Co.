@@ -1,0 +1,99 @@
+<section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+    {{#each errors}}
+    <h1 class="alert alert-primary" role="alert">{{text}}</h1>
+
+    {{else}}
+
+    {{/each}}
+
+
+    <div class="card card-body">
+
+        <h3 class="text-center font-weight-bold">Create Event</h3>
+        <p class="text-center">Create your best events with our friendly volunteer friends</p>
+
+
+        <form action="/events" method="post">
+            <!-- Grid row -->
+            <div class="form-row">
+                <!-- Grid column -->
+                <div class="col-md-12">
+                    <!-- Material input -->
+                    <div class="md-form form-group">
+                        <input type="text" class="form-control" name="title" placeholder="Title" required>
+                        <label for="title">Title</label>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="row">
+                <!-- Grid column -->
+                <div class="col-md-12">
+                    <!-- Material input -->
+                    <div class="md-form form-group">
+                        <input type="text" class="form-control" name="details" placeholder="Details" required>
+                        <label for="details">Details</label>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                <div class="col-md-6">
+                    <!-- Material input -->
+                    <div class="md-form form-group">
+                        <input type="text" class="form-control" name="location" placeholder="Apartment, studio, or floor"
+                            required>
+                        <label for="location">Address </label>
+                    </div>
+                </div>
+                <!-- Grid column -->
+
+                <div class="col-md-6">
+                    <!-- Material input -->
+                    <div class="md-form form-group">
+                        <input type="text" class="form-control" name="city" placeholder="New York City" required>
+                        <label for="city">City</label>
+                    </div>
+                </div>
+            </div>
+            <!-- Grid row -->
+
+            <!-- Grid row -->
+            <div class="form-row">
+
+                <!-- Grid column -->
+                <div class="col-md-6">
+                    <!-- Material input -->
+                    <div class="md-form form-group">
+                        <input type="text" class="form-control" name="phone" placeholder="Number" required>
+                        <label for="phone">Contact Number</label>
+                    </div>
+                </div>
+                <!-- Grid column -->
+                <div class="col-md-6">
+                    <!-- Material input -->
+                    <div class="md-form form-group">
+                        <input type="text" class="form-control" name="time" placeholder="Time" required>
+                        <label for="time">Select Date</label>
+                    </div>
+                </div>
+                {{!-- <div class="col-md-6">
+                    <!-- Material input -->
+                    <div class="md-form">
+                        <input placeholder="Selected date" type="text" name="time" id="date-picker-example" class="form-control datepicker"
+                            required>
+                        <label for="date-picker-example">Select date</label>
+                    </div>
+                </div> --}}
+            </div>
+            <!-- Grid row -->
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+
+    </div>
+</section>
