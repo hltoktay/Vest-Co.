@@ -1,0 +1,67 @@
+<div class="container px-0 z-depth-1">
+
+    <!--Section: Content-->
+    <section class="p-2 my-md-2 text-center bg-image">
+
+        <form class="my-1 mx-md-1" action="/users/register" method="post">
+
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <!-- Material form login -->
+                    <div class="card">
+
+                        <!--Card content-->
+                        <div class="card-body">
+
+                            <!-- Form -->
+                            <form action="/users/register" method="post">
+
+                                <h3 class="font-weight-bold my-2 pb-2 text-center dark-grey-text">Account Register</h3>
+
+
+                                <div class=" md-form mb-2 text-left">
+                                    <i class="fas fa-user prefix grey-text "></i>
+                                    <input type="text" name="name" value="{{name}}" class="form-control validate"
+                                        required>
+                                    <label for="name">Your name</label>
+                                </div>
+                                <!-- Email -->
+
+                                <div class="md-form mb-2 text-left">
+                                    <i class="fas fa-envelope prefix grey-text"></i>
+                                    <input type="email" name="email" value="{{email}}" class="form-control validate"
+                                        required>
+                                    <label for="email">Your email</label>
+                                </div>
+                                <!-- Password -->
+
+                                <div class="md-form mb-2 text-left">
+                                    <i class="fas fa-lock prefix grey-text"></i>
+                                    <input type="password" name="password" value="{{password}}" class="form-control validate"
+                                        required>
+                                    <label for="password">Your password</label>
+                                </div>
+
+
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-outline-primary btn-rounded my-4 waves-effect">Submit</button>
+                                </div>
+
+                            </form>
+                            <!-- Form -->
+
+                        </div>
+
+                    </div>
+                    <!-- Material form login -->
+                </div>
+            </div>
+
+        </form>
+
+    </section>
+    <!--Section: Content-->
+
+
+</div>

@@ -29,16 +29,24 @@
             <!-- Grid column -->
 
             <!-- Grid column -->
-            <div class="col-md-6 col-xl-4">
+            <div class="col-md-6 col-xl-8">
 
                 <!-- Post title -->
                 <h4 class="font-weight-bold mb-2"><strong>{{title}}</strong></h4>
                 <!-- Excerpt -->
                 <p class="dark-grey-text">{{details}}</p>
                 <!-- Post data -->
-                <p><strong>Event Date</strong> <a class="font-weight-bold"></a> 19/04/2018</p>
+                <p>
+                    <strong>Location</strong> <a class=""> {{location}}</a>
+                    <strong class="ml-5 font-weight-bold">Event Date</strong> <a class="font-italic font-weight-lighter">
+                        {{time}}</a>
+
+
+                </p>
+
                 <!-- Read more button -->
                 <a class="btn btn-primary btn-md mx-0 btn-rounded">Contact</a>
+                <a class="btn btn-primary btn-md mx-2 btn-rounded">Join us</a>
 
             </div>
             <!-- Grid column -->
@@ -50,5 +58,9 @@
 
 </div>
 {{else}}
-<p>No events lsited</p>
+
+<p>There is no event soon...</p>
+
+
+
 {{/each}}

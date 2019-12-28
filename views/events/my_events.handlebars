@@ -4,11 +4,7 @@
 {{#each events}}
 <div class="card card-body mb-2">
 
-    {{!-- <h4>{{title}}</h4>
-    <p>{{details}}</p>
-    <p>{{location}} &&{{city}}</p>
-    <p>{{phone}}</p>
-    <p>{{time}}</p> --}}
+
     <div class="container mt-2">
 
         <!-- Grid row -->
@@ -36,7 +32,8 @@
                 <!-- Excerpt -->
                 <p class="dark-grey-text">{{details}}</p>
                 <!-- Post data -->
-                <p>Event Date <a class="font-weight-bold"></a> 19/04/2018</p>
+                <p><strong> Date:</strong><a class="font-weight-bold"></a> {{time}}</p>
+                <p><strong>Location:</strong> <a class="font-weight-bold"></a> {{location}}</p>
                 <!-- Read more button -->
                 <a class="btn btn-primary btn-md mx-0 btn-rounded">Contact</a>
 
