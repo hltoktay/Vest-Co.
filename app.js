@@ -137,10 +137,15 @@ app.post("/", (req, res) => {
       senderEmail: req.body.senderEmail,
       message: req.body.message
     };
-    new Message(newMessage).save().then(message => {
-      req.flash("success_msg", "Your Message Had Been Sended");
-      res.redirect("/");
-    });
+    new Message(newMessage)
+      .save()
+      .then(message => {
+        req.flash("success_msg", "Your Message Had Been Sended");
+        res.redirect("/");
+      })
+      .catch(err => {
+        throw err;
+      });
   }
 });
 
