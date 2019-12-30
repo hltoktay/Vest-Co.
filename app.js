@@ -18,13 +18,20 @@ const users = require("./routes/users");
 // Passport Config
 require("./config/passport")(passport);
 
+// DB CONFIG
+const db = require("./config/database");
+
 // Load Event Model
 require("./models/Events");
 const Event = mongoose.model("events");
 
+// Load Message Model
+require("./models/Message");
+const Message = mongoose.model("messages");
+
 // Connect to mongoose
 mongoose
-  .connect("mongodb://localhost/Vest-Co", {
+  .connect(db.mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -105,11 +112,43 @@ app.get("/all_events", (req, res) => {
     });
 });
 
+// Message sender
+app.post("/", (req, res) => {
+  console.log(req.body.message);
+  let errors = [];
+
+  if (!req.body.senderName) {
+    errors.push({ text: "Please add a name" });
+  }
+
+  if (!req.body.senderEmail) {
+    errors.push({ text: "Please add a email" });
+  }
+
+  if (errors.length > 0) {
+    res.render("/", {
+      errors: errors,
+      senderName: req.body.senderName,
+      senderEmail: req.body.senderEmail
+    });
+  } else {
+    const newMessage = {
+      senderName: req.body.senderName,
+      senderEmail: req.body.senderEmail,
+      message: req.body.message
+    };
+    new Message(newMessage).save().then(message => {
+      req.flash("success_msg", "Your Message Had Been Sended");
+      res.redirect("/");
+    });
+  }
+});
+
 // Use routes
 app.use("/events", events);
 app.use("/users", users);
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Server running on ${port}`);

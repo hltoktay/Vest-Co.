@@ -54,7 +54,7 @@
                 <div class="card-body">
 
                     <!-- Form -->
-                    <form name="">
+                    <form action="/" method="post">
                         <!-- Heading -->
                         <h3 class="dark-grey-text text-center">
                             <strong>Write to us</strong>
@@ -63,23 +63,23 @@
 
                         <div class="md-form">
                             <i class="fas fa-user prefix grey-text"></i>
-                            <input type="text" id="form3" class="form-control">
-                            <label for="form3">Your name</label>
+                            <input type="text" id="form3" name="senderName" class="form-control">
+                            <label for="senderName">Your name</label>
                         </div>
                         <div class="md-form">
                             <i class="fas fa-envelope prefix grey-text"></i>
-                            <input type="text" id="form2" class="form-control">
-                            <label for="form2">Your email</label>
+                            <input type="email" name="senderEmail" id="form2" class="form-control">
+                            <label for="senderEmail">Your email</label>
                         </div>
 
                         <div class="md-form">
                             <i class="fas fa-pencil-alt prefix grey-text"></i>
-                            <textarea type="text" id="form8" class="md-textarea"></textarea>
-                            <label for="form8">Your message</label>
+                            <textarea type="text" name="message" id="form8" class="md-textarea"></textarea>
+                            <label for="message">Your message</label>
                         </div>
 
                         <div class="text-center">
-                            <button class="btn btn-indigo">Send</button>
+                            <button type="submit" class="btn btn-indigo">Send</button>
                             <hr>
                             <fieldset class="form-check">
                                 <input type="checkbox" class="form-check-input" id="checkbox1">
