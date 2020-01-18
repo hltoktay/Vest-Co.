@@ -1,7 +1,29 @@
+<div class="container">
+
+    <form action="/events/find_events" method="GET" class="">
+        <div class="row footer_find ">
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <div class="input-group md-form form-sm form-1 pl-0">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text cyan lighten-3" id="basic-text1"><i class="fas fa-search text-white"
+                                aria-hidden="true"></i></span>
+                    </div>
+                    <input class="form-control my-0 py-1" type="text" name="search" placeholder="Search" aria-label="Search">
+                    <div class="input-group-prepend">
+                        <input type="submit" value="Search" class="btn btn-cyan">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+</div>
 <h2 class="text-center font-weight-bold mb-3 ">My Events</h2>
 <p class="text-center mx-auto w-responsive mb-3">One of the best ways to identify opportunities and stay up to date
     with modern trends is to follow the companies and Vest Co who are leading the way.</p>
 {{#each events}}
+
 <div class="card card-body mb-2">
 
 
@@ -36,7 +58,7 @@
                 <p><strong> Date:</strong><a class="font-weight-bold"></a> {{time}}</p>
                 <p><strong>Location:</strong> <a class="font-weight-bold"></a> {{location}}</p>
                 <!-- Read more button -->
-                <a class="btn btn-primary btn-md mx-0 btn-rounded">Contact</a>
+                <strong>Contact:</strong><a class=""> {{phone}}</a>
 
                 <div class="row pl-2">
                     <a class="btn btn-dark btn-sm" href="/events/edit/{{id}}">Edit</a>

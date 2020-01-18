@@ -112,6 +112,11 @@ app.get("/all_events", (req, res) => {
     });
 });
 
+// Profile route
+app.get("/profile", (req, res) => {
+  res.render("users/profile");
+});
+
 // Message sender
 app.post("/", (req, res) => {
   console.log(req.body.message);

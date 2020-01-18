@@ -5,10 +5,27 @@
 }
 
 .footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
   color: white;
   text-align: center;
+}
+
+.footer_find {
+  position: relative;
+  bottom: 0;
+}
+
+.footer_profile {
+  position: relative;
+  height: 67vh;
+  bottom: 0;
+}
+
+.footer_empty {
+  position: relative;
+  height: 37vh;
+  bottom: 0;
 }

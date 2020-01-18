@@ -20,6 +20,36 @@ router.get("/my_events", ensureAuthenticated, (req, res) => {
     });
 });
 
+// FIND EVENTS
+router.get("/find_events", (req, res) => {
+  var noMatch = null;
+  if (req.query.search) {
+    const regex = new RegExp(escapeRegex(req.query.search), "gi");
+    // Get all events from db
+    Event.find({ title: regex }, (err, events) => {
+      if (err) {
+        console.log(err);
+      } else {
+        if (events.length < 1) {
+          noMatch = "No match found, pls try again";
+        }
+        // req.flash("error_msg", "There is no event found...");
+        res.render("all_events", { events: events, noMatch: noMatch });
+      }
+    });
+  } else {
+    // Get all events from DB
+    Event.find({}, (err, events) => {
+      if (err) {
+        console.log(err);
+      } else {
+        // req.flash("error_msg", "There is no event found...");
+        res.render("all_events", { events: events, noMatch: noMatch });
+      }
+    });
+  }
+});
+
 // Add Events Form
 router.get("/add", ensureAuthenticated, (req, res) => {
   res.render("events/add");
@@ -112,5 +142,9 @@ router.delete("/:id", ensureAuthenticated, (req, res) => {
     res.redirect("/events/my_events");
   });
 });
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
 
 module.exports = router;
