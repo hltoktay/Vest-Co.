@@ -1,5 +1,6 @@
 .bg-image {
-  background-image: url(https://mdbootstrap.com/img/Photos/Others/images/91.jpg);
+  background-image: url(https://images.pexels.com/photos/862848/pexels-photo-862848.jpeg?cs=srgb&dl=silhouette-of-four-people-against-sun-background-862848.jpg&fm=jpg);
+  width: 100%;
   background-size: cover;
   background-position: center center;
 }
@@ -28,4 +29,23 @@
   position: relative;
   height: 37vh;
   bottom: 0;
+}
+
+video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 70%;
+  min-height: 100%;
+  width: 100%;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: url("//demosthenes.info/assets/images/polina.jpg") no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+
+.stopfade {
+  opacity: 0.5;
 }

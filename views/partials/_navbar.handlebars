@@ -1,75 +1,82 @@
-<nav class="mb-3 navbar navbar-expand-sm navbar-dark unique-color">
-    <div class="container">
-        <a class="navbar-brand h1 mt-1 ml-3 " href="/">Vest Co.</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
-            aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent-333">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/pricing">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/all_events">Events</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/blog">Blog</a>
-                </li>
+<div class="container">
 
-            </ul>
-            <ul class="navbar-nav ml-auto nav-flex-icons mr-5">
+    <nav class="mb-3 navbar navbar-expand-sm navbar-dark unique-color" style="border-bottom-right-radius: 50px; border-bottom-left-radius: 50px">
+        <div class="container text-monospace">
+            <a class="navbar-brand h1 mt-1 ml-3 " href="/">Vest Co.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333"
+                aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse ml-5" id="navbarSupportedContent-333">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/all_events">Events</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
 
-                {{#if user}}
+                </ul>
+                <ul class="navbar-nav ml-auto nav-flex-icons mr-5">
 
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link waves-effect waves-light">
-                        <i class="fab fa-google-plus-g"></i>
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                    {{#if user}}
 
-                        <a class="dropdown-item" href="/events/my_events">My Events</a>
-                        <a class="dropdown-item" href="/events/add">Add Events</a>
-                        <a class="dropdown-item" href="/profile">Profile</a>
-                        <a class="dropdown-item" href="../users/logout">Logout</a>
-                    </div>
-                </li>
-                {{!-- <li class="nav-item">
-                    <a href="../users/logout" class="nav-link" data-toggle="modal">Logout</a>
-                </li> --}}
-                {{else}}
-                <!-- Button trigger modal-->
-                <li class="nav-item">
-                    <a href="../users/model_login" class="nav-link" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
-                </li>
-                {{> _model_login}}
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link waves-effect waves-light">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
 
-                <li class="nav-item">
-                    <a href="../users/model_register" class="nav-link" data-toggle="modal" data-target="#modalRegisterForm">Register</a>
-                </li>
-                {{> _model_register}}
+                            <a class="dropdown-item" href="/events/my_events">My Events</a>
+                            <a class="dropdown-item" href="/events/add">Add Events</a>
+                            <a class="dropdown-item" href="/profile">Profile</a>
+                            <a class="dropdown-item" href="../users/logout">Logout</a>
+                        </div>
+                    </li>
+                    {{!-- <li class="nav-item">
+                        <a href="../users/logout" class="nav-link" data-toggle="modal">Logout</a>
+                    </li> --}}
+                    {{else}}
+                    <!-- Button trigger modal-->
+                    <li class="nav-item">
+                        <a href="../users/model_login" class="nav-link" data-toggle="modal" data-target="#exampleModalCenter">Login</a>
+                    </li>
+                    {{> _model_login}}
 
-                {{/if}}
-            </ul>
+                    <li class="nav-item">
+                        <a href="../users/model_register" class="nav-link" data-toggle="modal" data-target="#modalRegisterForm">Register</a>
+                    </li>
+                    {{> _model_register}}
+
+                    {{/if}}
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
+
+</div>

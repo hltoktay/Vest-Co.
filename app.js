@@ -101,6 +101,11 @@ app.get("/blog", (req, res) => {
   res.render("blog");
 });
 
+// Contact Route
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
+
 // ALL Event Route
 app.get("/all_events", (req, res) => {
   Event.find({})
@@ -131,7 +136,7 @@ app.post("/", (req, res) => {
   }
 
   if (errors.length > 0) {
-    res.render("/", {
+    res.render("index", {
       errors: errors,
       senderName: req.body.senderName,
       senderEmail: req.body.senderEmail
