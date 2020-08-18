@@ -14,6 +14,7 @@ const app = express();
 // Load Routes
 const events = require("./routes/events");
 const users = require("./routes/users");
+const profiles = require("./routes/profile");
 
 // Passport Config
 require("./config/passport")(passport);
@@ -119,7 +120,7 @@ app.get("/all_events", (req, res) => {
 
 // Profile route
 app.get("/profile", (req, res) => {
-  res.render("users/profile");
+  res.render("profiles/account");
 });
 
 // Message sender
@@ -162,6 +163,7 @@ app.post("/", (req, res) => {
 // Use routes
 app.use("/events", events);
 app.use("/users", users);
+app.use("/profile", profiles);
 
 const port = process.env.PORT || 5000;
 
